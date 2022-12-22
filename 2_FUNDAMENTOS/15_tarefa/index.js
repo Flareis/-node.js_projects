@@ -1,7 +1,7 @@
 const inquirer = require("inquirer")
 const chalk = require("chalk")
 
-inquire.prompt([
+inquirer.prompt([
     {
       name: p1,
       message: "What is your name?",
