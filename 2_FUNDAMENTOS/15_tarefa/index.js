@@ -3,16 +3,21 @@ const chalk = require("chalk")
 
 inquirer.prompt([
     {
-      name: p1,
+      name: 'name',
       message: "What is your name?",
     },
     {
-      name: p2,
+      name: 'old',
       message: 'How old are you?',
     }
   ])
   .then((answers) => {
+
+    if(!answers.name || !answers.old){
+      throw new Error('Name and old are mandatories datas.')
+    }    
+    const response = `My name is ${answers.name} and I'm ${answers.old} years old.`
     console.log(answers)
-    console.log(chalk.bgYellow.black(`My name is ${answers.p1} and I'm ${answers.p2} years old.`))
+    console.log(chalk.bgYellow.black(response))
   })
   .catch((err) => console.log(err))
